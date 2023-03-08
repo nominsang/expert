@@ -1,0 +1,77 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+zh-CN:
+  # views
+  layouts:
+    application:
+      expert: "专家学者"
+  items:
+    index:
+      items: "人物列表"
+      show_this_item: "展示此人物信息"
+      new_item: "新增人物"
+    new:
+      new_item: "新增人物"
+      back_to_items: "返回人物列表"
+    item:
+      name: "姓名"
+      alias_name: "别名/曾用名"
+      sex: "性别"
+      nation: "民族"
+      birthday: "出生日期"
+      deathdate: "逝世日期"
+      birthplace: "出生地"
+      occupation: "职业"
+      biographical_text: "生平"
+    show:
+      edit_this_item: "编辑此人物"
+      back_to_items: "返回人物列表"
+      destroy_this_item: "删除此人物"
+    edit:
+      editing_item: "编辑人物"
+      show_this_item: "展示此人物信息"
+      back_to_items: "返回人物列表"
+
+  activerecord:
+    models:
+      item: "人物"
+    attributes:
+      item:
+        name: "姓名"
+        alias_name: "别名/曾用名"
+        sex: "性别"
+        nation: "民族"
+        birthday: "出生日期"
+        deathdate: "逝世日期"
+        birthplace: "出生地"
+        occupation: "职业"
+        biographical_text: "生平"

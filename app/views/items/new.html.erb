@@ -1,0 +1,9 @@
+<h1><%= t(".new_item") %></h1>
+
+<%= render "form", item: @item %>
+
+<br>
+
+<div>
+  <%= link_to t(".back_to_items"), items_path %>
+</div>

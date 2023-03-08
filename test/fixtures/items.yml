@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  alias_name: MyString
+  sex: MyString
+  nation: MyString
+  birthday: 2023-03-07
+  deathdate: 2023-03-07
+  birthplace: MyString
+  occupation: MyString
+  biographical_text: MyText
+
+two:
+  name: MyString
+  alias_name: MyString
+  sex: MyString
+  nation: MyString
+  birthday: 2023-03-07
+  deathdate: 2023-03-07
+  birthplace: MyString
+  occupation: MyString
+  biographical_text: MyText

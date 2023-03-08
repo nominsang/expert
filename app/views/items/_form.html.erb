@@ -1,0 +1,62 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2>数据保存前出现 <%= pluralize(item.errors.count, "个错误") %>：</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :alias_name, style: "display: block" %>
+    <%= form.text_field :alias_name %>
+  </div>
+
+  <div>
+    <%= form.label :sex, style: "display: block" %>
+    <%= form.select :sex, [["男", "male"], ["女", "female"]], selected: "male" %>
+  </div>
+
+  <div>
+    <%= form.label :nation, style: "display: block" %>
+    <%= form.text_field :nation %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :deathdate, style: "display: block" %>
+    <%= form.date_field :deathdate %>
+  </div>
+
+  <div>
+    <%= form.label :birthplace, style: "display: block" %>
+    <%= form.text_field :birthplace %>
+  </div>
+
+  <div>
+    <%= form.label :occupation, style: "display: block" %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div>
+    <%= form.label :biographical_text, style: "display: block" %>
+    <%= form.text_area :biographical_text %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
