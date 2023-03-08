@@ -2,12 +2,22 @@
 
 <h1><%= t(".items") %></h1>
 
-<div id="items">
+<div class="search">
+ <%= search_form_for @q do |f| %>
+
+    <%= f.label :name_cont %>
+    <%= f.search_field :name_cont %>
+
+    <%= f.submit %>
+  <% end %>
   <ul>
-    <% @items.each do |item| %>
-    <li><%=link_to item.name, item %></li>
+    <% @people.each do |person| %>
+    <li><%= link_to person.name, person %></li>
     <% end %>
   </ul>
+  <p>
+    <%= paginate @people %>
+  </p>
 </div>
 
 <%= link_to t(".new_item"), new_item_path %>

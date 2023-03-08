@@ -1,7 +1,9 @@
 <div id="<%= dom_id item %>">
   <p>
     <strong><%= t(".avatar") %>:</strong>
-    <%=image_tag item.avatar.representation() %>
+    <% if item.avatar.attached? %>
+    <%=image_tag item.avatar %>
+    <% end %>
   </p>
   <p>
     <strong><%= t(".name") %>:</strong>

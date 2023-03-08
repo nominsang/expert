@@ -30,13 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
-  # views
+  # Views
   layouts:
     application:
-      expert: "专家学者"
+      expert: "专家学者库"
   items:
     index:
-      items: "人物列表"
+      items: "专家学者列表"
       show_this_item: "展示此人物信息"
       new_item: "新增人物"
     new:
@@ -60,7 +60,7 @@ zh-CN:
       editing_item: "编辑人物"
       show_this_item: "展示此人物信息"
       back_to_items: "返回人物列表"
-
+  # Models
   activerecord:
     models:
       item: "人物"
@@ -75,3 +75,21 @@ zh-CN:
         birthplace: "出生地"
         occupation: "职业"
         biographical_text: "生平"
+
+# Kaminari
+  views:
+    pagination:
+      first: "&laquo; 始页"
+      last: "末页 &raquo;"
+      previous: "&lsaquo; 前页"
+      next: "后页 &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "未命中关于“%{entry_name}”的数据"
+          one: "显示 <b>1</b> 条关于“%{entry_name}”的数据"
+          other: "显示<b>所有 %{count} </b> 关于“%{entry_name}”的数据"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

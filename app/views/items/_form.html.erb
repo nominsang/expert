@@ -1,7 +1,7 @@
 <%= form_with(model: item) do |form| %>
   <% if item.errors.any? %>
     <div style="color: red">
-      <h2>数据保存前出现 <%= pluralize(item.errors.count, "个错误") %>：</h2>
+      <h2>保存数据时发现 <%= pluralize(item.errors.count, "个错误") %>：</h2>
 
       <ul>
         <% item.errors.each do |error| %>
@@ -12,6 +12,9 @@
   <% end %>
 
   <div>
+    <% if @item.avatar.attached? %>
+    <%= image_tag @item.avatar %>
+    <% end %>
     <%= form.label :avatar, style: "display: block" %>
     <%= form.file_field :avatar %>
   </div>
