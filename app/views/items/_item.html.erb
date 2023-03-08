@@ -1,5 +1,9 @@
 <div id="<%= dom_id item %>">
   <p>
+    <strong><%= t(".avatar") %>:</strong>
+    <%=image_tag item.avatar.representation() %>
+  </p>
+  <p>
     <strong><%= t(".name") %>:</strong>
     <%= item.name %>
   </p>
