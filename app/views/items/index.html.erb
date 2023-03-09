@@ -1,23 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<%= search_form_for @q do |f| %>
+<div class="field has-addons has-addons-centered my-6 pt-6">
 
-<h2><%= t(".items") %></h2>
+    <p class="control">
+    <%= f.search_field :name_cont, class: "input" %>      
+    </p>
+    <p class="control">
+      <%= f.submit "检索", class: "button is-primary" %>
+    </p>
+</div>
+<% end %>
 
-<div class="search">
- <%= search_form_for @q do |f| %>
-
-    <%= f.label :name_cont %>
-    <%= f.search_field :name_cont %>
-
-    <%= f.submit %>
+<div class="content">
+  <ul class="list">
+  <% @people.each do |person| %>
+  <li class="list-item"><%= link_to person.name, person %></li>
   <% end %>
-  <ul>
-    <% @people.each do |person| %>
-    <li><%= link_to person.name, person %></li>
-    <% end %>
   </ul>
-  <p>
-    <%= paginate @people %>
+</div>
+
+<div class="paginate">
+  <p class="mt-6 pt-6 pb-6">
+  <%= paginate @people %>
   </p>
 </div>
 
-<%= link_to t(".new_item"), new_item_path %>
+<% if user_signed_in? %>
+<div class="new-item">
+ <%= link_to t(".new_item"), new_item_path %>
+</div>
+<% end %>

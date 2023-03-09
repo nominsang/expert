@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t(".expert") %></title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= t(".expert") %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,9 +13,73 @@
 
   <body>
     <h1>
-     <a href="<%= root_path %>">蒙古学专家学者数据库</a>
+     <a href="<%= root_path %>"></a>
     </h1>
-    
-    <%= yield %>
+
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= t(".expert") %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <span class="navbar-item has-text-weight-bold is-size-4">
+            <%= t(".expert") %>
+          </span>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a href="<%= root_path %>" class="navbar-item">
+              <%= t(".home") %>
+            </a>
+
+            <a class="navbar-item">
+              <%= t(".about") %>
+            </a>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <% unless user_signed_in? %>
+                <%= link_to t(".sign_up"), new_user_registration_path, class: "button is-primary" %>
+                <%= link_to t(".sign_in"), new_user_session_path, class: "button is-light" %>
+                <% else %>
+                <%=link_to t(".sign_out"), destroy_user_session_path, data: { "turbo-method": :delete }, class: "button is-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="main">
+        <p style="color: green"><%= notice %></p>
+        <p  style="color: red"><%= alert %></p>
+        <%= yield %>
+      </div>
+      
+      
+    </div>
+  </section>
   </body>
 </html>

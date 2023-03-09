@@ -33,7 +33,12 @@ zh-CN:
   # Views
   layouts:
     application:
-      expert: "专家学者库"
+      expert: "蒙古学专家学者库"
+      home: "首页"
+      about: "关于"
+      sign_in: "登录"
+      sign_up: "注册"
+      sign_out: "注销"
   items:
     index:
       items: "专家学者列表"
