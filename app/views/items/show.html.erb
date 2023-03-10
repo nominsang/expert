@@ -1,8 +1,9 @@
 <%= render @item %>
-
-<div>
-  <%= link_to t(".edit_this_item"), edit_item_path(@item) %> |
-  <%= link_to t(".back_to_items"), items_path %>
-
-  <%= button_to t(".destroy_this_item"), @item, method: :delete %>
+<% if user_signed_in? %>
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+   <%= link_to t(".edit_this_item"), edit_item_path(@item), class: "button is-info" %> 
+  <%= link_to t(".destroy_this_item"), @item, class: "button is-danger", method: :delete %>
+  </div>
 </div>
+<% end %>

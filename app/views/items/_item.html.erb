@@ -1,53 +1,17 @@
-<div id="<%= dom_id item %>">
-  <p>
-    <strong><%= t(".avatar") %>:</strong>
+<div id="<%= dom_id item %>" class="columns my-6">
+  <div class="column is-4 has-text-right">
     <% if item.avatar.attached? %>
     <%=image_tag item.avatar %>
     <% end %>
-  </p>
-  <p>
-    <strong><%= t(".name") %>:</strong>
-    <%= item.name %>
-  </p>
+  </div>
+  
+  <div class="column is-8">
+   <p><strong><%= item.name %></strong>（<%= item.birthday %>——<%= item.deathdate %>），<% if item.sex == "male" %>男<% else %>女<% end %>，<%= item.nation %>，出生于<%= item.birthplace %>。<%= t(".alias_name") %><%= item.alias_name %>。<%= item.occupation %></p>
 
-  <p>
-    <strong><%= t(".alias_name") %>:</strong>
-    <%= item.alias_name %>
-  </p>
-
-  <p>
-    <strong><%= t(".sex") %>:</strong>
-    <%= item.sex %>
-  </p>
-
-  <p>
-    <strong><%= t(".nation") %>:</strong>
-    <%= item.nation %>
-  </p>
-
-  <p>
-    <strong><%= t(".birthday") %>:</strong>
-    <%= item.birthday %>
-  </p>
-
-  <p>
-    <strong><%= t(".deathdate") %>:</strong>
-    <%= item.deathdate %>
-  </p>
-
-  <p>
-    <strong><%= t(".birthplace") %>:</strong>
-    <%= item.birthplace %>
-  </p>
-
-  <p>
-    <strong><%= t(".occupation") %>:</strong>
-    <%= item.occupation %>
-  </p>
-
-  <p>
-    <strong><%= t(".biographical_text") %>:</strong>
-    <%= item.biographical_text %>
-  </p>
-
+    <div class="content">
+     <%= Kramdown::Document.new(item.biographical_text).to_html.html_safe %>
+    </div>
+  </div>
+  
+  
 </div>

@@ -125,6 +125,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kramdown (2.4.0)
+      rexml
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -265,6 +267,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari (~> 1.2)
+  kramdown (~> 2.4)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-i18n (~> 7.0)

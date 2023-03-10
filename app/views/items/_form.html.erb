@@ -1,70 +1,198 @@
 <%= form_with(model: item) do |form| %>
-  <% if item.errors.any? %>
-    <div style="color: red">
-      <h2>保存数据时发现 <%= pluralize(item.errors.count, "个错误") %>：</h2>
+<div class="field is-horizontal">
+  <div class="field-label">
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <% if item.errors.any? %>
+          <div style="color: red">
+            <h2>保存数据时发现 <%= pluralize(item.errors.count, "个错误") %>：</h2>
 
-      <ul>
-        <% item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% item.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+      </div>
     </div>
-  <% end %>
-
-  <div>
-    <% if @item.avatar.attached? %>
-    <%= image_tag @item.avatar %>
-    <% end %>
-    <%= form.label :avatar, style: "display: block" %>
-    <%= form.file_field :avatar %>
   </div>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+</div>
+<div class="field is-horizontal">  
+  <div class="field-label is-normal">
+    <%= form.label :avatar, class: "label" %>
   </div>
-
-  <div>
-    <%= form.label :alias_name, style: "display: block" %>
-    <%= form.text_field :alias_name %>
+  <div class="field-body">
+    <div class="file has-name">
+      <label class="file-label">
+        <%= form.file_field :avatar, class: "file-input"%>
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            选择一个照片文件……
+          </span>
+        </span>
+        <span class="file-name">
+          <% if @item.avatar.attached? %>
+          <%= @item.avatar.filename %>
+          <% else %>
+          没有上传头像
+          <% end %>
+        </span>
+      </label>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :sex, style: "display: block" %>
-    <%= form.select :sex, [["男", "male"], ["女", "female"]], selected: "male" %>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :name, class: "label" %>
   </div>
-
-  <div>
-    <%= form.label :nation, style: "display: block" %>
-    <%= form.text_field :nation %>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_field :name, class: "input" %>
+      </div>
+      <p class="help is-danger">
+        必填项，填写常用名
+      </p>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :birthday, style: "display: block" %>
-    <%= form.date_field :birthday %>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :alias_name, class: "label" %>
   </div>
-
-  <div>
-    <%= form.label :deathdate, style: "display: block" %>
-    <%= form.date_field :deathdate %>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_field :alias_name, class: "input" %>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :birthplace, style: "display: block" %>
-    <%= form.text_field :birthplace %>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label">
+    <%= form.label "sex", class: "label" %>
   </div>
-
-  <div>
-    <%= form.label :occupation, style: "display: block" %>
-    <%= form.text_field :occupation %>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <label class="radio">
+          <%= form.radio_button :sex, "male" %>
+          男
+        </label>
+        <label class="radio">
+          <%= form.radio_button :sex, "female" %>
+          女
+        </label>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :biographical_text, style: "display: block" %>
-    <%= form.text_area :biographical_text %>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :nation, class: "label" %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_field :nation, class: "input" %>
+      </div>
+      <p class="help is-danger">
+        中国专家学者使用此项填写民族，如“**族”，国外专家填写国籍即可
+      </p>
+    </div>
   </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :birthday, class: "label" %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.date_field :birthday, class: "input" %>
+      </div>
+      <p class="help is-danger">
+        必填项，格式为 YYYY/MM/DD
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :deathdate, class: "label" %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.date_field :deathdate, class: "input" %>
+      </div>
+      <p class="help is-info">
+        格式为 YYYY/MM/DD
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :birthplace, class: "label" %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_field :birthplace, class: "input" %>
+      </div>
+      <p class="help is-info">
+        如出生地为历史行政区划，请在括号中对现在地址加以说明
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :occupation, class: "label" %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_field :occupation, class: "input" %>
+      </div>
+      <p class="help is-danger">
+        必填项，填写主要从事职业或者擅长学科等
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%= form.label :biographical_text, class: "label" %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.text_area :biographical_text, class: "textarea" %>
+      </div>
+      <p class="help is-info">
+        支持 Markdown 格式
+      </p>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label">
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.submit class: "button is-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>

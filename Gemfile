@@ -84,3 +84,5 @@ gem "devise-i18n", "~> 1.11"
 gem "rolify", "~> 6.0"
 
 gem "bulma-rails", "~> 0.9.4"
+
+gem "kramdown", "~> 2.4"

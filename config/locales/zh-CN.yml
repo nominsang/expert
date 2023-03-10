@@ -39,14 +39,12 @@ zh-CN:
       sign_in: "登录"
       sign_up: "注册"
       sign_out: "注销"
+      new_item: "新增专家学者"
   items:
     index:
       items: "专家学者列表"
-      show_this_item: "展示此人物信息"
-      new_item: "新增人物"
     new:
-      new_item: "新增人物"
-      back_to_items: "返回人物列表"
+      new_item: "新增专家学者"
     item:
       name: "姓名"
       alias_name: "别名/曾用名"
@@ -58,17 +56,15 @@ zh-CN:
       occupation: "职业"
       biographical_text: "生平"
     show:
-      edit_this_item: "编辑此人物"
-      back_to_items: "返回人物列表"
-      destroy_this_item: "删除此人物"
+      edit_this_item: "编辑此专家信息"
+      destroy_this_item: "删除此专家信息"
     edit:
-      editing_item: "编辑人物"
-      show_this_item: "展示此人物信息"
-      back_to_items: "返回人物列表"
+      editing_item: "编辑专家信息"
+
   # Models
   activerecord:
     models:
-      item: "人物"
+      item: "专家学者"
     attributes:
       item:
         name: "姓名"
