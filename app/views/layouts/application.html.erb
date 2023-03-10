@@ -62,7 +62,6 @@
             <div class="navbar-item">
               <div class="buttons">
                 <% unless user_signed_in? %>
-                <%= link_to t(".sign_up"), new_user_registration_path, class: "button is-primary" %>
                 <%= link_to t(".sign_in"), new_user_session_path, class: "button is-light" %>
                 <% else %>
                 <%= link_to t(".new_item"), new_item_path, class: "button is-light" %>
