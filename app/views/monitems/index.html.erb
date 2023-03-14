@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Monitems</h1>
+
+<div id="monitems">
+  <% @monitems.each do |monitem| %>
+    <%= render monitem %>
+    <p>
+      <%= link_to "Show this monitem", monitem %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New monitem", new_monitem_path %>

@@ -1,0 +1,2 @@
+module MonitemsHelper
+end
