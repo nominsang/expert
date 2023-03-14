@@ -6,7 +6,7 @@
   </div>
   
   <div class="column is-8">
-   <p><strong><%= item.name %></strong>（<%= item.birthday %>——<%= item.deathdate %>），<% if item.sex == "male" %>男<% else %>女<% end %>，<%= item.nation %>，出生于<%= item.birthplace %>。<%= t(".alias_name") %><%= item.alias_name %>。<%= item.occupation %></p>
+   <p><strong><%= item.name %></strong><% unless item.alias_name.strip == "" %><%= t(".alias_name") %><%= item.alias_name %><% end %>。（<%= item.birthday %>——<%= item.deathdate %>），<% if item.sex == "male" %>男<% else %>女<% end %>，<%= item.nation %>，出生于<%= item.birthplace %>。<%= item.occupation %></p>
 
     <div class="content">
      <%= Kramdown::Document.new(item.biographical_text).to_html.html_safe %>
