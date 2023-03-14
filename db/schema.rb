@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_015627) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_032233) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_015627) do
     t.string "alias_name"
     t.string "sex"
     t.string "nation"
-    t.date "birthday"
-    t.date "deathdate"
+    t.string "birthday"
+    t.string "deathdate"
     t.string "birthplace"
     t.string "occupation"
     t.text "biographical_text"

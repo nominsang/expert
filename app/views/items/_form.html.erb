@@ -23,7 +23,7 @@
 </div>
 <div class="field is-horizontal">  
   <div class="field-label is-normal">
-    <%= form.label :avatar, class: "label" %>
+    <%= form.label "头像", class: "label" %>
   </div>
   <div class="field-body">
     <div class="file has-name">
@@ -116,10 +116,10 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <%= form.date_field :birthday, class: "input" %>
+        <%= form.text_field :birthday, class: "input" %>
       </div>
       <p class="help is-danger">
-        必填项，格式为 YYYY/MM/DD
+        有则必填，格式为 YYYYMMDD，不清楚则用“0”代替
       </p>
     </div>
   </div>
@@ -131,10 +131,10 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <%= form.date_field :deathdate, class: "input" %>
+        <%= form.text_field :deathdate, class: "input" %>
       </div>
       <p class="help is-info">
-        格式为 YYYY/MM/DD
+        格式为 YYYYMMDD，不清楚则用“0”代替
       </p>
     </div>
   </div>
