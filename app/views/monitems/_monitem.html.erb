@@ -1,36 +1,36 @@
 <div id="<%= dom_id monitem %>">
   <p>
-    <strong>Item:</strong>
-    <%= monitem.item_id %>
+    <strong><%= t(".item") %></strong>
+    <%= monitem.item.name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong><%= t(".name") %></strong>
     <%= monitem.name %>
   </p>
 
   <p>
-    <strong>Alias name:</strong>
+    <strong><%= t(".alias_name") %></strong>
     <%= monitem.alias_name %>
   </p>
 
   <p>
-    <strong>Nation:</strong>
+    <strong><%= t(".nation") %></strong>
     <%= monitem.nation %>
   </p>
 
   <p>
-    <strong>Birthplace:</strong>
+    <strong><%= t(".birthplace") %></strong>
     <%= monitem.birthplace %>
   </p>
 
   <p>
-    <strong>Occupation:</strong>
+    <strong><%= t(".occupation") %></strong>
     <%= monitem.occupation %>
   </p>
 
   <p>
-    <strong>Biographical text:</strong>
+    <strong><%= t(".biographical_text") %></strong>
     <%= monitem.biographical_text %>
   </p>
 

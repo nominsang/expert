@@ -3,13 +3,30 @@
     <% if item.avatar.attached? %>
     <%=image_tag item.avatar %>
     <% end %>
+    <% if item.monitems.size > 0 %>
+    <div class="mongolian-info">
+      <%=link_to t(".mongolian_info"), item_monitem_path(item, item.monitems.first), class: "button" %>
+    </div>
+    <% end %>
   </div>
   
   <div class="column is-8 content">
-   <p><strong><%= item.name %></strong><% unless item.alias_name.strip == "" %><%= t(".alias_name") %><%= item.alias_name %><% end %>。（<%= item.birthday %>——<%= item.deathdate %>），<% if item.sex == "male" %>男<% else %>女<% end %>，<%= item.nation %>，出生于<%= item.birthplace %>。<%= item.occupation %>。</p>
+   <p>
+   <strong><%= item.name %></strong>
+   <% unless item.alias_name.strip == "" %>
+     <%= t(".alias_name") %><%= item.alias_name %>
+   <% end %>。
+    （
+    <%= item.birthday %>
+    ——
+    <%= item.deathdate %>），
+    <% if item.sex == "male" %>男<% else %>女<% end %>，
+    <%= item.nation %>，
+        出生于<%= item.birthplace %>。
+        <%= item.occupation %>。
+      </p>
 
      <%= Kramdown::Document.new(item.biographical_text).to_html.html_safe %>
   </div>
-  
   
 </div>

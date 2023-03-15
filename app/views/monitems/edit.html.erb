@@ -1,13 +1,13 @@
 <div class="mgl my-6 py-6">
- <h1>Editing monitem</h1>
+ <h1 class="title px-6"><%= t(".editing_monitem") %></h1>
 
   <%= render "form", monitem: @monitem %>
 
   <br>
 
   <div>
-    <%= link_to "Show this monitem", @monitem %> |
-    <%= link_to "Back to monitems", monitems_path %>
+    <%= link_to t(".show_this_monitem"), [@monitem.item, @monitem] %> |
+    <%= link_to t(".back_to_item"), item_path(@monitem.item) %>
   </div>
 </div>
 

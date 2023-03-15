@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class="mgl my-6 py-6">
 
-<h1>Monitems</h1>
+<h1 class="title"><%= @item.name %></h1>
 
 <div id="monitems">
   <% @monitems.each do |monitem| %>
     <%= render monitem %>
     <p>
-      <%= link_to "Show this monitem", monitem %>
+      <%= link_to "Show this monitem", [monitem.item, monitem] %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New monitem", new_monitem_path %>
+</div>
+

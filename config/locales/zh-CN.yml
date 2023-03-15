@@ -55,12 +55,36 @@ zh-CN:
       birthplace: "出生地"
       occupation: "职业"
       biographical_text: "生平"
+      mongolian_info: "蒙古文信息"
     show:
       edit_this_item: "编辑此专家信息"
       destroy_this_item: "删除此专家信息"
       add_mongolian_item: "添加蒙古文信息"
     edit:
       editing_item: "编辑专家信息"
+  monitems:
+    show:
+      edit_this_monitem: "编辑此蒙古文条目"
+      back_to_item: "返回该学者汉文信息"
+      destroy_this_monitem: "删除此蒙古文信息"
+    monitem:
+      name: "姓名"
+      alias_name: "别名/曾用名"
+      item: "专家学者"
+      nation: "民族"
+      birthday: "出生日期"
+      deathdate: "逝世日期"
+      birthplace: "出生地"
+      occupation: "职业"
+      biographical_text: "生平"
+      mongolian_info: "蒙古文信息"
+    edit:
+      editing_monitem: "编辑蒙古文信息"
+      show_this_monitem: "显示此蒙古文信息"
+      back_to_item: "返回该学者汉文信息"
+    new:
+      new_monitem: "新增蒙古文信息"
+      back_to_item: "返回该学者汉文信息"
 
   # Models
   activerecord:
@@ -79,6 +103,7 @@ zh-CN:
         occupation: "职业"
         biographical_text: "生平"
       monitem:
+        item_id: "汉文专家信息条目ID"
         name: "姓名"
         alias_name: "别名/曾用名"
         sex: "性别"

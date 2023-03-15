@@ -3,7 +3,8 @@ class MonitemsController < ApplicationController
 
   # GET /monitems or /monitems.json
   def index
-    @monitems = Monitem.all
+    @item = Item.find(params[:item_id])
+    @monitems = @item.monitems.all
   end
 
   # GET /monitems/1 or /monitems/1.json
@@ -12,7 +13,8 @@ class MonitemsController < ApplicationController
 
   # GET /monitems/new
   def new
-    @monitem = Monitem.new
+    @item = Item.find(params[:item_id])
+    @monitem = @item.monitems.new
   end
 
   # GET /monitems/1/edit
@@ -25,7 +27,7 @@ class MonitemsController < ApplicationController
 
     respond_to do |format|
       if @monitem.save
-        format.html { redirect_to monitem_url(@monitem), notice: "Monitem was successfully created." }
+        format.html { redirect_to [@monitem.item, @monitem], notice: "Monitem was successfully created." }
         format.json { render :show, status: :created, location: @monitem }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class MonitemsController < ApplicationController
   def update
     respond_to do |format|
       if @monitem.update(monitem_params)
-        format.html { redirect_to monitem_url(@monitem), notice: "Monitem was successfully updated." }
+        format.html { redirect_to item_monitem_url(@monitem.item, @monitem), notice: "Monitem was successfully updated." }
         format.json { render :show, status: :ok, location: @monitem }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class MonitemsController < ApplicationController
     @monitem.destroy
 
     respond_to do |format|
-      format.html { redirect_to monitems_url, notice: "Monitem was successfully destroyed." }
+      format.html { redirect_to item_url(@monitem.item), notice: "Monitem was successfully destroyed." }
       format.json { head :no_content }
     end
   end

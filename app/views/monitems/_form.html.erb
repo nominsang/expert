@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :item_id, style: "display: block" %>
-    <%= form.text_field :item_id %>
+    <%= form.text_field :item_id, readonly: true %>
   </div>
 
   <div>
@@ -43,7 +43,7 @@
 
   <div>
     <%= form.label :biographical_text, style: "display: block" %>
-    <%= form.text_area :biographical_text %>
+    <%= form.text_area :biographical_text, rows: 5 %>
   </div>
 
   <div>

@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="mgl my-6 px-6">
 
 <%= render @monitem %>
 
 <div>
-  <%= link_to "Edit this monitem", edit_monitem_path(@monitem) %> |
-  <%= link_to "Back to monitems", monitems_path %>
+  <%= link_to t(".edit_this_monitem"), edit_item_monitem_path(@monitem.item, @monitem) %> |
+  <%= link_to t(".back_to_item"), item_path(@item) %>
 
-  <%= button_to "Destroy this monitem", @monitem, method: :delete %>
+  <%= button_to t(".destroy_this_monitem"), [@monitem.item, @monitem], method: :delete %>
+</div> 
 </div>
+
