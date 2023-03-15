@@ -1,12 +1,17 @@
 <%= render @item %>
 <% if user_signed_in? %>
 <div class="columns is-mobile is-centered">
-  <div class="column is-half">
+  <div class="column">
     <%= link_to t(".edit_this_item"), edit_item_path(@item), class: "button is-info" %> 
-    <%= link_to t(".destroy_this_item"), @item, class: "button is-danger", method: :delete %>
-    <% if @item.monitems.size == 0 %>
+  </div>
+  <div class="column">
+      <%= button_to t(".destroy_this_item"), @item, method: :delete, class: "button is-danger", data: {"turbo-confirm": "您确认要删除该信息吗？"} %>
+  </div>
+  <div class="column">
+       <% if @item.monitems.size == 0 %>
     <%= link_to t(".add_mongolian_item"), new_item_monitem_path(@item), class: "button is-link" %>
     <% end %>
   </div>
+   
 </div>
 <% end %>

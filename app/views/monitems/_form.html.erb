@@ -1,7 +1,7 @@
 <%= form_with(model: [monitem.item, monitem]) do |form| %>
   <% if monitem.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(monitem.errors.count, "error") %> prohibited this monitem from being saved:</h2>
+      <h2>保存时发现 <%= pluralize(monitem.errors.count, "个错误") %>：</h2>
 
       <ul>
         <% monitem.errors.each do |error| %>
@@ -14,36 +14,43 @@
   <div>
     <%= form.label :item_id, style: "display: block" %>
     <%= form.text_field :item_id, readonly: true %>
+    <br>
   </div>
 
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
+    <br>
   </div>
 
   <div>
     <%= form.label :alias_name, style: "display: block" %>
     <%= form.text_field :alias_name %>
+    <br>
   </div>
 
   <div>
     <%= form.label :nation, style: "display: block" %>
     <%= form.text_field :nation %>
+    <br>
   </div>
 
   <div>
     <%= form.label :birthplace, style: "display: block" %>
     <%= form.text_field :birthplace %>
+    <br>
   </div>
 
   <div>
     <%= form.label :occupation, style: "display: block" %>
     <%= form.text_field :occupation %>
+    <br>
   </div>
 
   <div>
     <%= form.label :biographical_text, style: "display: block" %>
     <%= form.text_area :biographical_text, rows: 5 %>
+    <br>
   </div>
 
   <div>

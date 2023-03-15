@@ -1,4 +1,5 @@
 class MonitemsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ create edit update destroy ]
   before_action :set_monitem, only: %i[ show edit update destroy ]
 
   # GET /monitems or /monitems.json
@@ -23,11 +24,12 @@ class MonitemsController < ApplicationController
 
   # POST /monitems or /monitems.json
   def create
+    @item = Item.find(params[:item_id])
     @monitem = Monitem.new(monitem_params)
 
     respond_to do |format|
       if @monitem.save
-        format.html { redirect_to [@monitem.item, @monitem], notice: "Monitem was successfully created." }
+        format.html { redirect_to [@monitem.item, @monitem], notice: "该蒙古文信息已保存" }
         format.json { render :show, status: :created, location: @monitem }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +42,7 @@ class MonitemsController < ApplicationController
   def update
     respond_to do |format|
       if @monitem.update(monitem_params)
-        format.html { redirect_to item_monitem_url(@monitem.item, @monitem), notice: "Monitem was successfully updated." }
+        format.html { redirect_to item_monitem_url(@monitem.item, @monitem), notice: "该蒙古文信息已更新。" }
         format.json { render :show, status: :ok, location: @monitem }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +56,7 @@ class MonitemsController < ApplicationController
     @monitem.destroy
 
     respond_to do |format|
-      format.html { redirect_to item_url(@monitem.item), notice: "Monitem was successfully destroyed." }
+      format.html { redirect_to item_url(@monitem.item), notice: "该蒙古文信息已删除。" }
       format.json { head :no_content }
     end
   end
