@@ -29,9 +29,9 @@
     <%= monitem.occupation %>
   </p>
 
-  <p>
-    <strong><%= t(".biographical_text") %></strong>
+  <div class="bio">
+    <p><strong><%= t(".biographical_text") %></strong></p>
     <%= Kramdown::Document.new(monitem.biographical_text).to_html.safe %>
-  </p>
+  </div>
 
 </div>

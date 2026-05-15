@@ -6,3 +6,11 @@
   font-family: "Mongolian Baiti";
  }
  
+.bio p {
+text-align: justify; /* 两端对齐 */
+}
+.bio p::after {
+content: ''; /* 伪元素强制换行，保证单行也能两端对齐 */
+display: inline-block;
+width: 100%;
+}
