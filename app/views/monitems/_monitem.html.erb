@@ -31,7 +31,7 @@
 
   <p>
     <strong><%= t(".biographical_text") %></strong>
-    <%= monitem.biographical_text %>
+    <%= Kramdown::Document.new(monitem.biographical_text).to_html.safe %>
   </p>
 
 </div>
